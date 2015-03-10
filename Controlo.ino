@@ -25,8 +25,6 @@ int valor_chama = 15; // A vela estava pequena
 
 boolean quarto = false;
 boolean apagar = false;
-boolean esquerda = true;
-boolean direita = true;
 
 
 void setup(){
@@ -86,21 +84,19 @@ void vela(){
   while(!apagar){
       
     // Virar a esquerda
-    while(esquerda){
+    while(true){
        Motores(0,60);
        if(chama() < 300){
-         esquerda = false;
-         direita = true;
+         break;
        }
        delay(800);
     }
     
     //Virar a direita
-    while(direita){
+    while(true){
        Motores(60,0);
        if(chama() < 300){
-         direita = false;
-         esquerda = true;
+         break;
        }
        delay(800); //Se diminuir a velocidade compensar com o delay
     }
